@@ -1,7 +1,6 @@
 <template>
   <div>
     <ghibli-component v-for="film in films" v-bind:key="film.id" :film="film"/>
-    <h1>Studio Ghibli</h1>
   </div>
 </template>
 
