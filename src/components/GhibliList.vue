@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ghibli-component v-for="film in films" v-bind:key="film.id" :films="film"/>
+    <ghibli-component v-for="film in films" v-bind:key="film.id" :film="film"/>
     <h1>Studio Ghibli</h1>
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
         ghibliService.getMovies()
             .then((response) => {
                 console.log(response)
-                this.films = response.title
+                this.films = response.data
             })
     }
 }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ movies.name }}
+    {{ film.title }}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
 
     props: 
-        ["movies"]
+        ["film"]
     
 }
 </script>
