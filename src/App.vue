@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <h1>Studio Ghibli</h1>
+    <ghibli-list></ghibli-list>
   </div>
 </template>
 
 <script>
 
-
+import GhibliList from '../src/components/GhibliList.vue';
 export default {
   name: 'App',
   components: {
-    
+    GhibliList
   }
 }
 </script>
