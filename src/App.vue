@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <header>
-      <h1>Studio Ghibli</h1>
+      <div class="heading">
+        <h1>Studio Ghibli</h1>
+      </div>
+      
     </header>
       <ghibli-list></ghibli-list>
   </div>
@@ -29,13 +32,17 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+h1 {
+  font-size: 100px;
+  color:white ;
+}
 body {
   margin: 0;
   min-height: 100vh;
   background: #CFEED1;
 }
 header {
-    background-color: #FFF3D9;
+    background-color: #FF2768;
     padding: 100px 0;
     margin-bottom: 20px;
   }

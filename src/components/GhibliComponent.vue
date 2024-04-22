@@ -9,6 +9,8 @@
             <p>{{ film.title }}</p>
             <p>{{ film.original_title }}</p>
             <p>{{ film.original_title_romanised }}</p>
+            <p>{{ film.director }}</p>
+            <p>Release Date {{ film.release_date }}</p>
         </div>
       </div>
     </div>
@@ -23,7 +25,7 @@ export default {
 
 <style scoped>
 #poster {
-  background: #4e1a3d;
+  background: #FF2768;
   padding: 10px;
   align-content: center;
 }
@@ -36,19 +38,20 @@ export default {
   text-align: center;
   background: #05e0e9;
   height: 400px;
-  border: #4e1a3d;
+  border: #FF2768;
   border-style: outset;
+}
+.card:hover {
+    transform: scale(1.1);
 }
 .card-details {
   align-items: center;
+  color: #4E1A3D;
+  font-size: 20px;
+  margin-top: 40px;
+  
 }
-.details-content {
-    text-align: center;
-    
-}
-.details-content p {
-    margin: 0;
-}
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0, 0.2);
 }
