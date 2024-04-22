@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <header>
+      <h1></h1>
+    </header>
     <ghibli-list></ghibli-list>
   </div>
 </template>
@@ -16,12 +19,25 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0px;
+  padding: 0px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lora,Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: #CFEED1;
+  
+}
+body {
+  min-height: 100%;
+  background-color: #FFF3D9;
+}
+header {
+  max-height: 300px;
 }
 </style>
