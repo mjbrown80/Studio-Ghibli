@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <header>
-      <h1></h1>
+      <h1>Studio Ghibli</h1>
     </header>
-    <ghibli-list></ghibli-list>
+      <ghibli-list></ghibli-list>
   </div>
 </template>
 
@@ -20,8 +20,7 @@ export default {
 
 <style>
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
 }
 #app {
   font-family: Lora,Avenir, Helvetica, Arial, sans-serif;
@@ -29,15 +28,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  background: #CFEED1;
-  
 }
 body {
-  min-height: 100%;
-  background-color: #FFF3D9;
+  margin: 0;
+  min-height: 100vh;
+  background: #CFEED1;
 }
 header {
-  max-height: 300px;
-}
+    background-color: #FFF3D9;
+    padding: 100px 0;
+    margin-bottom: 20px;
+  }
 </style>

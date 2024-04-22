@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="scroll-wrapper" >
     <ghibli-component v-for="film in films" v-bind:key="film.id" :film="film"/>
   </div>
 </template>
@@ -29,4 +29,10 @@ export default {
 
 <style>
 
+.scroll-wrapper {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  
+}
 </style>
