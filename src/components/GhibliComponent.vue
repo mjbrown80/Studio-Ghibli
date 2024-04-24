@@ -1,25 +1,28 @@
 <template>
   <div class="container">
-    <div class="card">
-      <div class="front-card-details">
+    <div
+      class="card"
+      @mouseenter="isHovering = true"
+      @mouseleave="isHovering = false"
+    >
+      <div class="front-card-details" v-show="!isHovering">
+        <div id="movie-poster">
+          <img :src="film.image" style="width: 100%" />
+        </div>
+      </div>
+      <div class="back-card-details" v-show="isHovering">
         <div id="poster">
-          <img :src="film.movie_banner" style="width: 100%" alt="" />
+          <img :src="film.movie_banner" alt="" />
         </div>
         <div class="card-details">
-          <div details-content>
+          <div class="details-content">
             <p>{{ film.title }}</p>
             <p>{{ film.original_title }}</p>
             <p>{{ film.original_title_romanised }}</p>
-            <p>{{ film.description }}</p>
-            <p>{{ film.director }}</p>
-            <p>Release Date {{ film.release_date }}</p>
-            <p>Running time {{ film.running_time }}</p>
-          </div>
-          <div class="back-card-details">
-            <div id="movie-poster">
-            <img :src="film.image" style="width: 100%" />
-            </div>
-            <p>{{ film.title }}</p>
+            <div class="synopsis">Synopsis: {{ film.description }}</div>
+            <p>Director: {{ film.director }}</p>
+            <p>Release Date: {{ film.release_date }}</p>
+            <p>Running time :{{ film.running_time }}</p>
           </div>
         </div>
       </div>
@@ -30,6 +33,11 @@
 <script>
 export default {
   props: ["film"],
+  data() {
+    return {
+      isHovering: false,
+    };
+  },
 };
 </script>
 
@@ -42,11 +50,13 @@ export default {
 }
 #poster img {
   border-radius: 2rem;
+  width: 100%;
 }
 .container {
-  width: 400px;
-  height: 700px;
-  perspective: 800px;
+  width: 300px;
+  height: 100%;
+  margin: 20px;
+  padding: 10px;
 }
 .container:hover > .card {
   cursor: pointer;
@@ -55,11 +65,10 @@ export default {
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 300px;
-  margin: 20px;
   padding: 10px;
   text-align: center;
   background: #05e0e9;
-  height: 700px;
+  height: 100%;
   border: #ff2768;
   border-style: outset;
   border-radius: 2rem;
@@ -67,7 +76,6 @@ export default {
   position: relative;
   transition: transform 1500ms;
 }
-
 .front-card-details .back-card-details {
   position: absolute;
   backface-visibility: hidden;
@@ -75,25 +83,21 @@ export default {
   width: 100%;
 }
 .front-card-details {
-  /* height: 100%;
-  width: 100%;
-  position: relative; */
   transform: rotateY(0deg);
 }
 .card-details {
   align-items: center;
   color: #4e1a3d;
   font-size: 20px;
-  margin-top: 40px;
-}
-.front-card-details {
+  margin-top: 0.5rem;
+  height: 100%;
+  overflow-y: auto;
 }
 .back-card-details {
   background-color: #05e0e9;
-  position: absolute;
   transform: rotateY(180deg);
-  top: 0;
-  left: 0;
+  display: none;
+  z-index: 1;
 }
 #movie-poster {
   background: #ff2768;
@@ -105,9 +109,21 @@ export default {
   border-radius: 2rem;
 }
 .card:hover .front-card-details {
-    transform: rotateY(-180deg);
+  transform: rotateY(180deg);
 }
 .card:hover .back-card-details {
-    transform: rotateY(0deg);
+  display: block;
+  transform: rotateY(0deg);
+}
+.details-content {
+  transform: rotateY(180deg);
+  font-size: medium;
+}
+.synopsis {
+  max-height: 100px;
+  overflow-y: auto;
+  border: #ff2768;
+  border-style: outset;
+  padding: 10px;
 }
 </style>

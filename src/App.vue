@@ -41,12 +41,11 @@ body {
   margin: 0;
   min-height: 100vh;
   background: #CFEED1;
-  background: linear-gradient(45deg, #499E77, #CFEED1);
+  background: linear-gradient(45deg, #499E77, #FF2768,#05E0E9 );
 }
 header {
     background-color: #FF2768;
     background: linear-gradient(45deg,#FF2768, #05E0E9 );
     padding: 50px 0;
-    margin-bottom: 20px;
   }
 </style>
